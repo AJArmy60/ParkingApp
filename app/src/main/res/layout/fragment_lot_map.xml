@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LotMapFragment">
+    tools:context=".LotMapFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/LotnameText"
+        android:layout_width="169dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="40dp"
+        android:text="North Lot"
+        android:textSize="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/ParkingGrid"
+        android:layout_width="311dp"
+        android:layout_height="441dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LotnameText">
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/EnterSpaceText"
+        android:layout_width="237dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="18dp"
+        android:text="Enter Space Number"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ParkingGrid" />
+
+    <Button
+        android:id="@+id/ParkButton"
+        android:layout_width="137dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="39dp"
+        android:text="Park"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/EnterSpaceEditText"
+        android:layout_width="208dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="36dp"
+        android:ems="10"
+        android:inputType="number"
+
+        android:text="Enter valid (green) #"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
