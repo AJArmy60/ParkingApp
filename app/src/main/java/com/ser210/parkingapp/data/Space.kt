@@ -14,7 +14,7 @@ data class Space(
     val studentId: Int,
     @ColumnInfo(name = "space_number")
     val lotSpaceNumber: Int,
-    @ColumnInfo(name = "full")
+    @ColumnInfo(name = "space_full")
     val spaceFull: Boolean
 
 )
