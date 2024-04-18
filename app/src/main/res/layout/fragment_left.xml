@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeftFragment" >
+
+    <TextView
+        android:id="@+id/GoodbyeTextView"
+        android:layout_width="175dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginEnd="118dp"
+        android:text="Goodbye"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BackToLotButton"
+        android:layout_width="275dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="32dp"
+        android:text="Back to Lot Selection"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/SignOutbutton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/SignOutbutton"
+        android:layout_width="275dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="74dp"
+        android:text="Sign Out"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
