@@ -11,7 +11,7 @@
         android:id="@+id/LotnameText"
         android:layout_width="169dp"
         android:layout_height="46dp"
-        android:layout_marginStart="121dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="40dp"
         android:text="North Lot"
         android:textSize="32dp"
@@ -20,12 +20,259 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/ParkingGrid"
-        android:layout_width="311dp"
-        android:layout_height="441dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_marginTop="24dp"
+        app:columnCount="4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LotnameText">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LotnameText"
+        app:orientation="horizontal"
+        app:rowCount="8">
+
+        <ImageButton
+            android:id="@+id/Space01"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            android:text="1"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageButton
+            android:id="@+id/Space02"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="20dp"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <ImageButton
+            android:id="@+id/Space03"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="0" />
+
+        <ImageButton
+            android:id="@+id/Space04"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="32dp"
+            app:layout_column="3"
+            app:layout_row="0" />
+
+        <ImageButton
+            android:id="@+id/Space05"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/Space06"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/Space07"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/Space08"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="1" />
+
+        <ImageButton
+            android:id="@+id/Space09"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/Space10"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/Space11"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/Space12"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="2" />
+
+        <ImageButton
+            android:id="@+id/Space13"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/Space14"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/Space15"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/Space16"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="3" />
+
+        <ImageButton
+            android:id="@+id/Space17"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <ImageButton
+            android:id="@+id/Space18"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="4" />
+
+        <ImageButton
+            android:id="@+id/Space19"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="4" />
+
+        <ImageButton
+            android:id="@+id/Space20"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="4" />
+
+        <ImageButton
+            android:id="@+id/Space21"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="5" />
+
+        <ImageButton
+            android:id="@+id/Space22"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="5" />
+
+        <ImageButton
+            android:id="@+id/Space23"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="5" />
+
+        <ImageButton
+            android:id="@+id/Space24"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="5" />
+
+        <ImageButton
+            android:id="@+id/Space25"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="6" />
+
+        <ImageButton
+            android:id="@+id/Space26"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="6" />
+
+        <ImageButton
+            android:id="@+id/Space27"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="6" />
+
+        <ImageButton
+            android:id="@+id/Space28"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="6" />
+
+        <ImageButton
+            android:id="@+id/Space29"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            app:layout_column="0"
+            app:layout_row="7" />
+
+        <ImageButton
+            android:id="@+id/Space30"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="1"
+            app:layout_row="7" />
+
+        <ImageButton
+            android:id="@+id/Space31"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="45dp"
+            app:layout_column="2"
+            app:layout_row="7" />
+
+        <ImageButton
+            android:id="@+id/Space32"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            app:layout_column="3"
+            app:layout_row="7" />
 
     </androidx.gridlayout.widget.GridLayout>
 
