@@ -9,5 +9,22 @@
         android:id="@+id/signInFragment"
         android:name="com.ser210.parkingapp.SignInFragment"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_lotSelectionFragment"
+            app:destination="@id/lotSelectionFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_parkedFragment"
+            app:destination="@id/parkedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lotSelectionFragment"
+        android:name="com.ser210.parkingapp.LotSelectionFragment"
+        android:label="fragment_lot_selection"
+        tools:layout="@layout/fragment_lot_selection" />
+    <fragment
+        android:id="@+id/parkedFragment"
+        android:name="com.ser210.parkingapp.ParkedFragment"
+        android:label="fragment_parked"
+        tools:layout="@layout/fragment_parked" />
 </navigation>

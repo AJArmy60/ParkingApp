@@ -11,7 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.ser210.parkingapp.databinding.FragmentSignInBinding
+
 import kotlinx.coroutines.launch
+
 
 
 class SignInFragment : Fragment() {
@@ -19,9 +21,6 @@ class SignInFragment : Fragment() {
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: SpaceViewModel by activityViewModels {
-        SpaceViewModelFactory((activity?.application as ParkingApplication).database.spaceDao())
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,21 +28,20 @@ class SignInFragment : Fragment() {
     ): View? {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
 
-        binding.signInButton.setOnClickListener {
-            val studentId = binding.studentIdEditText.text.toString().toInt()
-            lifecycleScope.launch {
-                val spaces = viewModel.getSpacesByStudent(studentId)
-                if (spaces==null) {
-                    // Student ID found in the Parking database
-                    // Navigate to the next screen or show a success message
+        var studentId = 0
+        val navController = findNavController()
 
-                    Toast.makeText(context, "Student ID found in the Parking database", Toast.LENGTH_SHORT).show()
-                } else {
-                    // Student ID not found in the Parking database
-                    Toast.makeText(context, "Student ID not found in the Parking database", Toast.LENGTH_SHORT).show()
-                    // Show an error message
-                }
-            }
+
+        binding.Enterbutton.setOnClickListener {
+
+            val action = SignInFragmentDirections.actionSignInFragmentToLotSelectionFragment()
+            navController.navigate(action)
+
+            studentId = binding.EnterIDEditText.text.toString().toInt()
+
+            //lifecycleScope.launch {
+
+            //}
         }
 
         return binding.root

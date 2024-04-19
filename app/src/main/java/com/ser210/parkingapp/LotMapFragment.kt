@@ -14,9 +14,6 @@ class LotMapFragment : Fragment() {
     private var _binding: FragmentLotMapBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: SpaceViewModel by activityViewModels {
-        SpaceViewModelFactory((activity?.application as ParkingApplication).database.spaceDao())
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
