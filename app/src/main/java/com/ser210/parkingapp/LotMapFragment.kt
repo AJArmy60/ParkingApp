@@ -24,5 +24,15 @@ class LotMapFragment : Fragment() {
         _binding = FragmentLotMapBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (super.onViewCreated(view, savedInstanceState))
+
+        // get student id from bundle
+        val studentId = LotMapFragmentArgs.fromBundle(requireArguments()).studentId
+
+        // bind views
+
+    }
 }
 

@@ -29,19 +29,29 @@ class SignInFragment : Fragment() {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
 
         var studentId = 0
+        val studentIdEditText = binding.EnterIDEditText
         val navController = findNavController()
 
 
         binding.Enterbutton.setOnClickListener {
 
-            val action = SignInFragmentDirections.actionSignInFragmentToLotSelectionFragment()
-            navController.navigate(action)
-
-            studentId = binding.EnterIDEditText.text.toString().toInt()
-
-            //lifecycleScope.launch {
-
-            //}
+            if (studentIdEditText.text.toString().isEmpty()) {
+                Toast.makeText(context, "Please enter a valid student ID", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if (studentIdEditText.text.toString().toInt() <= 0) {
+                Toast.makeText(context, "Please enter a valid student ID", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if (studentIdEditText.text.toString().toInt() > 9999999) {
+                Toast.makeText(context, "Please enter a valid student ID", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else {
+                studentId = binding.EnterIDEditText.text.toString().toInt()
+                val action = SignInFragmentDirections.actionSignInFragmentToLotSelectionFragment(studentId)
+                navController.navigate(action)
+            }
         }
 
         return binding.root
