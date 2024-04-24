@@ -33,23 +33,23 @@ class LotSelectionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val navController = findNavController()
-        val user = LotSelectionFragmentArgs.fromBundle(requireArguments()).studentId
+        val studentId = LotSelectionFragmentArgs.fromBundle(requireArguments()).studentId
 
         binding.hilltopButton.setOnClickListener {
 
-            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToLotMapFragment(user, "Hilltop")
+            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToLotMapFragment(studentId, "Hilltop")
             navController.navigate(action)
 
         }
 
         binding.hoganButton.setOnClickListener {
-            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToLotMapFragment(user, "Hogan")
+            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToLotMapFragment(studentId, "Hogan")
             navController.navigate(action)
 
         }
 
         binding.northButton.setOnClickListener {
-            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToLotMapFragment(user, "North")
+            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToLotMapFragment(studentId, "North")
             navController.navigate(action)
 
         }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.ser210.parkingapp.databinding.FragmentLotMapBinding
 
 class LotMapFragment : Fragment() {
@@ -27,11 +28,18 @@ class LotMapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         (super.onViewCreated(view, savedInstanceState))
+        val navController = findNavController()
+        val studentId = LotSelectionFragmentArgs.fromBundle(requireArguments()).studentId
 
-        // get student id from bundle
-        val studentId = LotMapFragmentArgs.fromBundle(requireArguments()).studentId
 
         // bind views
+        val lotName = binding.LotnameText
+        lotName.text = LotMapFragmentArgs.fromBundle(requireArguments()).lotName
+
+        binding.ParkButton.setOnClickListener {
+            val action = LotMapFragmentDirections.actionLotMapFragmentToParkedFragment(studentId)
+            navController.navigate(action)
+        }
 
     }
 }
