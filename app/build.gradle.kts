@@ -12,7 +12,6 @@ android {
 
     buildFeatures{
         viewBinding = true
-        dataBinding = true
     }
 
     defaultConfig {
@@ -61,10 +60,15 @@ dependencies {
     // Room libraries
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.gridlayout)
+    implementation(libs.androidx.junit.ktx)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
+    androidTestImplementation("androidx.test:rules:1.5.0")
+
+    testImplementation("org.mockito:mockito-core:3.12.4")
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
+    //androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
 }
