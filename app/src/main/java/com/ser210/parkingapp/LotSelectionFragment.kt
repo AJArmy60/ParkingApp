@@ -54,6 +54,11 @@ class LotSelectionFragment : Fragment() {
 
         }
 
+        binding.signOutButton.setOnClickListener {
+            val action = LotSelectionFragmentDirections.actionLotSelectionFragmentToSignInFragment()
+            navController.navigate(action)
+        }
+
 
     }
 }

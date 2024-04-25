@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_lotSelectionFragment_to_lotMapFragment"
             app:destination="@id/lotMapFragment" />
+        <action
+            android:id="@+id/action_lotSelectionFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/parkedFragment"
@@ -37,9 +40,18 @@
         <argument
             android:name="studentId"
             app:argType="integer" />
+        <argument
+            android:name="lotName"
+            app:argType="string" />
+        <argument
+            android:name="spaceId"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_parkedFragment_to_leftFragment"
-            app:destination="@id/leftFragment" />
+            android:id="@+id/action_parkedFragment_to_lotSelectionFragment"
+            app:destination="@id/lotSelectionFragment" />
+        <action
+            android:id="@+id/action_parkedFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/lotMapFragment"
@@ -55,20 +67,5 @@
         <argument
             android:name="lotName"
             app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/leftFragment"
-        android:name="com.ser210.parkingapp.LeftFragment"
-        android:label="fragment_left"
-        tools:layout="@layout/fragment_left" >
-        <action
-            android:id="@+id/action_leftFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
-        <action
-            android:id="@+id/action_leftFragment_to_lotSelectionFragment"
-            app:destination="@id/lotSelectionFragment" />
-        <argument
-            android:name="studentId"
-            app:argType="integer" />
     </fragment>
 </navigation>
