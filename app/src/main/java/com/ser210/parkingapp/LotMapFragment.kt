@@ -7,10 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.ser210.parkingapp.data.Space
 import com.ser210.parkingapp.databinding.FragmentLotMapBinding
 
 class LotMapFragment : Fragment() {
 
+    private val navigationArgs: LotMapFragmentArgs by navArgs()
+    private val viewModel: ParkingViewModel by activityViewModels()
+
+
+    lateinit var space: Space
 
     private var _binding: FragmentLotMapBinding? = null
     private val binding get() = _binding!!
@@ -29,17 +36,18 @@ class LotMapFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         (super.onViewCreated(view, savedInstanceState))
         val navController = findNavController()
-        val studentId = LotSelectionFragmentArgs.fromBundle(requireArguments()).studentId
+        val studentId = LotMapFragmentArgs.fromBundle(requireArguments()).studentId
+        val lotName = LotMapFragmentArgs.fromBundle(requireArguments()).lotName
 
-
-        // bind views
-        val lotName = binding.LotnameText
-        lotName.text = LotMapFragmentArgs.fromBundle(requireArguments()).lotName
+        binding.LotnameText.text = lotName
 
         binding.ParkButton.setOnClickListener {
-            val action = LotMapFragmentDirections.actionLotMapFragmentToParkedFragment(studentId)
+            val spaceId = binding.EnterSpaceEditText.text.toString().toInt()
+            viewModel.parkInSpace(lotName, studentId, spaceId)
+            val action = LotMapFragmentDirections.actionLotMapFragmentToParkedFragment(studentId, lotName, spaceId)
             navController.navigate(action)
         }
+
 
     }
 }

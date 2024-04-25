@@ -307,7 +307,7 @@
         android:ems="10"
         android:inputType="number"
 
-        android:text="Enter valid (green) #"
+        android:hint="Enter space number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

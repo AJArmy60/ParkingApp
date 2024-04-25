@@ -1,7 +1,8 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.android.application")
+    id("kotlin-android")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.devtools.ksp") version "1.9.23-1.0.20"
 
 }
 
@@ -11,9 +12,8 @@ android {
 
     buildFeatures{
         viewBinding = true
+        dataBinding = true
     }
-
-
 
     defaultConfig {
         applicationId = "com.ser210.parkingapp"
@@ -45,16 +45,24 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.material)
+
+    // Lifecycle libraries
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+
+    // Navigation libraries
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    // Room libraries
+    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.gridlayout)
-    annotationProcessor(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
