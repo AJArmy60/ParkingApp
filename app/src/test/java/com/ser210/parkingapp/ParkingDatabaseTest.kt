@@ -1,13 +1,11 @@
 package com.ser210.parkingapp
 
 import android.content.Context
-import androidx.fragment.app.activityViewModels
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.ser210.parkingapp.data.Space
 import org.junit.runner.RunWith
-import org.mockito.Mockito.mock
 
 
 import com.ser210.parkingapp.data.SpaceDao
@@ -16,10 +14,8 @@ import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
-import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import kotlin.random.Random
 import java.io.IOException
 
 
@@ -58,7 +54,7 @@ class ParkingDatabaseTest {
         )
 
         for (space in expectedSpaces) {
-            viewModel.parkInSpace(space.lotName, space.studentId, space.spaceId)
+            viewModel.enterSpace(space.lotName, space.studentId, space.spaceId)
         }
         val actualSpaces = spaceDao.getSpaces().first()
         assertEquals(expectedSpaces, actualSpaces)
