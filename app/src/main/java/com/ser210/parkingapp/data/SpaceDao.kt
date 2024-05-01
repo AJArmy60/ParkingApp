@@ -55,7 +55,7 @@ interface SpaceDao {
     fun getAllSpacesInLot(lotName: String): Flow<List<Space>>
 
     @Query("SELECT * FROM spaces WHERE student_id = :studentId")
-    fun getSpaceByStudent(studentId: Int): Space
+    fun getSpaceByStudentId(studentId: Int): Space
 
     @Query("SELECT * FROM spaces")
     fun getAllSpaces(): Flow<List<Space>>
