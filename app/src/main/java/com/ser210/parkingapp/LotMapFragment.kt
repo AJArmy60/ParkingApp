@@ -12,6 +12,8 @@ import android.widget.Button
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.marginStart
 import androidx.core.view.setPadding
 import androidx.fragment.app.activityViewModels
@@ -21,8 +23,11 @@ import androidx.navigation.fragment.navArgs
 import com.ser210.parkingapp.data.Space
 import com.ser210.parkingapp.databinding.FragmentLotMapBinding
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import androidx.lifecycle.observe
+import kotlinx.coroutines.flow.Flow
 
 class LotMapFragment : Fragment() {
 
@@ -56,49 +61,27 @@ class LotMapFragment : Fragment() {
         val studentId = LotMapFragmentArgs.fromBundle(requireArguments()).studentId
         val lotName = LotMapFragmentArgs.fromBundle(requireArguments()).lotName
 
-        val space01 = binding.Space01
-        val space02 = binding.Space02
-        val space03 = binding.Space03
-        val space04 = binding.Space04
-        val space05 = binding.Space05
-        val space06 = binding.Space06
-        val space07 = binding.Space07
-        val space08 = binding.Space08
-        val space09 = binding.Space09
-        val space10 = binding.Space10
-        val space11 = binding.Space11
-        val space12 = binding.Space12
-        val space13 = binding.Space13
-        val space14 = binding.Space14
-        val space15 = binding.Space15
-        val space16 = binding.Space16
-        val space17 = binding.Space17
-        val space18 = binding.Space18
-        val space19 = binding.Space19
-        val space20 = binding.Space20
-        val space21 = binding.Space21
-        val space22 = binding.Space22
-        val space23 = binding.Space23
-        val space24 = binding.Space24
-        val space25 = binding.Space25
-        val space26 = binding.Space26
-        val space27 = binding.Space27
-        val space28 = binding.Space28
-        val space29 = binding.Space29
-        val space30 = binding.Space30
-        val space31 = binding.Space31
-        val space32 = binding.Space32
-
-        val spaceList = listOf(
-            space01, space02, space03, space04, space05, space06, space07, space08, space09, space10,
-            space11, space12, space13, space14, space15, space16, space17, space18, space19, space20,
-            space21, space22, space23, space24, space25, space26, space27, space28, space29, space30,
-            space31, space32
-        )
-
-        val spaces = viewModel.getAllSpacesInLot(lotName)
+        val red = ContextCompat.getColor(requireContext(), R.color.red)
+        val green = ContextCompat.getColor(requireContext(), R.color.green)
 
         binding.LotnameText.text = lotName
+
+        val spaceList = listOf(
+            binding.Space01, binding.Space02, binding.Space03, binding.Space04, binding.Space05, binding.Space06, binding.Space07, binding.Space08, binding.Space09, binding.Space10,
+            binding.Space11, binding.Space12, binding.Space13, binding.Space14, binding.Space15, binding.Space16, binding.Space17, binding.Space18, binding.Space19, binding.Space20,
+            binding.Space21, binding.Space22, binding.Space23, binding.Space24, binding.Space25, binding.Space26, binding.Space27, binding.Space28, binding.Space29, binding.Space30,
+            binding.Space31, binding.Space32
+        )
+
+        viewModel.getAllSpacesInLotAsLiveData(lotName).observe(viewLifecycleOwner) { spaces ->
+            spaces.forEachIndexed { index, space ->
+                if (space.studentId != 0) {
+                    spaceList[index].setBackgroundColor(red)
+                } else {
+                    spaceList[index].setBackgroundColor(green)
+                }
+            }
+        }
 
 
         binding.ParkButton.setOnClickListener {

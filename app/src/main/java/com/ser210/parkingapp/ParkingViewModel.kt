@@ -9,6 +9,7 @@ import com.ser210.parkingapp.data.Space
 import com.ser210.parkingapp.data.SpaceDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import androidx.lifecycle.asLiveData
 
 class ParkingViewModel(private val spaceDao: SpaceDao) : ViewModel() {
 
@@ -46,11 +47,11 @@ class ParkingViewModel(private val spaceDao: SpaceDao) : ViewModel() {
         }
     }
 
-    //
-    fun getSpaceInLot(spaceId: Int, lotName: String) {
-        viewModelScope.launch {
-            spaceDao.getSpaceInLot(spaceId, lotName)
-        }
+
+
+
+    fun getAllSpacesInLotAsLiveData(lotName: String): LiveData<List<Space>> {
+        return spaceDao.getAllSpacesInLot(lotName).asLiveData()
     }
 
     //function that inserts a space into the database
@@ -66,6 +67,12 @@ class ParkingViewModel(private val spaceDao: SpaceDao) : ViewModel() {
             spaceDao.updateSpaceStudentId(0, spaceId, lotName)
         }
     }
+
+    fun getAllStudentIdsInLot(lotName: String): Flow<List<Int>> {
+        return spaceDao.getAllStudentIdsInLot(lotName)
+    }
+
+
 
     //private function that checks if the database is empty for initializeSpaces()
     private suspend fun isDatabaseEmpty(): Boolean {
@@ -107,22 +114,8 @@ class ParkingViewModel(private val spaceDao: SpaceDao) : ViewModel() {
         }
     }
 
-    fun getAllSpacesInLot(lotName: String) : LiveData<List<Space>> {
-        val spacesInLot = MutableLiveData<List<Space>>()
-        viewModelScope.launch {
-            spacesInLot.value = spaceDao.getAllSpacesInLot(lotName)
-        }
-        return spacesInLot
-    }
 
-    fun getStudentIdInSpace(spaceId: Int, lotName: String): LiveData<Int> {
-        val studentId = MutableLiveData<Int>()
-        viewModelScope.launch {
-            val space = spaceDao.getSpaceInLot(spaceId, lotName)
-            studentId.value = space?.studentId
-        }
-        return studentId
-    }
+
 
 
 }
