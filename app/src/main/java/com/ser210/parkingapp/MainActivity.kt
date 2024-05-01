@@ -1,5 +1,6 @@
 package com.ser210.parkingapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,8 +25,22 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment2) as NavHostFragment
+        val navController = navHostFragment.navController
+        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        val builder = AppBarConfiguration.Builder(navController.graph)
+        builder.setOpenableLayout(drawer)
+        val appBarConfiguration = builder.build()
+        toolbar.setupWithNavController(navController, appBarConfiguration)
+        val navView = findViewById<NavigationView>(R.id.nav_view)
+        NavigationUI.setupWithNavController(navView, navController)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -36,4 +51,9 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment2)
+        return item.onNavDestinationSelected(navController)
+                || super.onOptionsItemSelected(item)
+    }
 }
