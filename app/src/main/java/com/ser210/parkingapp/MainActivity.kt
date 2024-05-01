@@ -24,6 +24,8 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    private var isBackgroundDark = false
+    private var isTextDark = true
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,8 +54,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment2)
-        return item.onNavDestinationSelected(navController)
-                || super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+
+            R.id.settingfragment -> {
+                val rootView = binding.root
+                if (isBackgroundDark) {
+                    rootView.setBackgroundColor(android.graphics.Color.WHITE)
+                } else {
+                    rootView.setBackgroundColor(android.graphics.Color.DKGRAY)
+                }
+                isBackgroundDark = !isBackgroundDark
+                val sharedPreferences = getSharedPreferences("appPreferences", MODE_PRIVATE)
+                val isTextDark = sharedPreferences.getBoolean("isTextDark", false)
+                with (sharedPreferences.edit()) {
+                    putBoolean("isTextDark", !isTextDark)
+                    apply()
+                }
+                true
+            }
+
+            R.id.helpFragment -> {
+                val navController = findNavController(R.id.nav_host_fragment2)
+                navController.navigate(R.id.helpFragment)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
