@@ -7,14 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.ser210.parkingapp.data.Space
-import com.ser210.parkingapp.data.SpaceRoomDatabase
 import com.ser210.parkingapp.databinding.FragmentSignInBinding
-
-import kotlinx.coroutines.launch
 
 
 class SignInFragment : Fragment() {
@@ -58,9 +53,8 @@ class SignInFragment : Fragment() {
                     .show()
                 return@setOnClickListener
             } else {
-
-                viewModel.deleteAllSpaces()
-                addNewSpaces()
+                //if the app is run for the first time, this creates the empty spaces in the database
+                viewModel.initializeSpaces()
                 studentId = binding.EnterIDEditText.text.toString().toInt()
                 val action =
                     SignInFragmentDirections.actionSignInFragmentToLotSelectionFragment(studentId)
@@ -75,17 +69,4 @@ class SignInFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-    private fun addNewSpaces() {
-        for (i in 1..32) {
-            viewModel.addNewSpace("Hilltop", 0, i)
-        }
-        for (i in 1..32) {
-            viewModel.addNewSpace("Hogan", 0, i)
-        }
-        for (i in 1..32) {
-            viewModel.addNewSpace("North", 0, i)
-        }
-    }
-
 }

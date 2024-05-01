@@ -5,16 +5,17 @@
     android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LotMapFragment" >
+    tools:context=".LotMapFragment">
 
     <TextView
         android:id="@+id/LotnameText"
         android:layout_width="169dp"
         android:layout_height="46dp"
-        android:layout_marginStart="120dp"
         android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
         android:text="North Lot"
         android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,254 +26,494 @@
         android:layout_marginTop="24dp"
         app:columnCount="4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LotnameText"
         app:orientation="horizontal"
         app:rowCount="8">
 
-        <ImageButton
+        <Button
             android:id="@+id/Space01"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:text="1"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="0" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space02"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="2"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="0" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space03"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="3"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="0" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space04"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginEnd="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="4"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="0" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space05"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="5"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="1" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space06"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="6"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="1" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space07"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="7"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="1" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space08"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="8"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="1" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space09"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="9"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="2" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="2"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space10"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="10"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="2" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="2"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space11"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="11"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="2" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="2"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space12"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="12"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="2" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="2"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space13"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="13"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="3" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="3"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space14"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="14"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="3" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="3"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space15"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="15"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="3" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="3"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space16"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="16"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="3" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="3"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space17"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="17"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="4" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="4"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space18"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="18"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="4" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="4"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space19"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="19"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="4" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="4"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space20"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="20"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="4" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="4"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space21"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="21"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="5" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="5"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space22"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="22"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="5" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="5"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space23"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="23"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="5" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="5"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space24"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="24"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="5" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="5"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space25"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="25"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="6" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="6"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space26"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="26"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="6" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="6"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space27"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="27"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="6" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="6"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space28"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="28"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="6" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="6"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space29"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="29"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="0"
-            app:layout_row="7" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="7"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space30"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="30"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="1"
-            app:layout_row="7" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="7"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space31"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="45dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="31"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="2"
-            app:layout_row="7" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="7"
+            app:layout_rowWeight="1" />
 
-        <ImageButton
+        <Button
             android:id="@+id/Space32"
-            android:layout_width="70dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="32"
+            android:backgroundTint="@color/green"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
             app:layout_column="3"
-            app:layout_row="7" />
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="7"
+            app:layout_rowWeight="1" />
+
+
+
+
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -305,10 +546,17 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="36dp"
         android:ems="10"
-        android:inputType="number"
-
         android:hint="Enter space number"
+
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="196dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
