@@ -8,13 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.ser210.parkingapp.data.Space
 import com.ser210.parkingapp.databinding.FragmentSignInBinding
 
-
 class SignInFragment : Fragment() {
-
-    //private val navigationArgs: SignInFragmentArgs by navArgs()
 
     private val viewModel: ParkingViewModel by activityViewModels {
         ParkingViewModelFactory(
@@ -22,7 +18,6 @@ class SignInFragment : Fragment() {
         )
     }
 
-    lateinit var space: Space
     private var _binding: FragmentSignInBinding? = null
     private val binding get() = _binding!!
 
@@ -33,35 +28,58 @@ class SignInFragment : Fragment() {
     ): View? {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
 
-        var studentId = 0
+        var studentId: Int
         val studentIdEditText = binding.EnterIDEditText
         val navController = findNavController()
 
 
+        // Listener for the enter button
         binding.Enterbutton.setOnClickListener {
 
+            // Get the student ID from the EditText
+            studentId = binding.EnterIDEditText.text.toString().toInt()
+
+            // Initialize the spaces if it's the first time the app is run
+            viewModel.initializeSpaces()
+
+            // Check if the student ID is valid
             if (studentIdEditText.text.toString().isEmpty()) {
                 Toast.makeText(context, "Please enter a valid student ID", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
-            } else if (studentIdEditText.text.toString().toInt() <= 0) {
+            } else if (studentId <= 0) {
                 Toast.makeText(context, "Please enter a valid student ID", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
-            } else if (studentIdEditText.text.toString().toInt() > 9999999) {
+            } else if (studentId > 9999999) {
                 Toast.makeText(context, "Please enter a valid student ID", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
+
+            // Check if the student is already parked
             } else {
-                //if the app is run for the first time, this creates the empty spaces in the database
-                viewModel.initializeSpaces()
-                studentId = binding.EnterIDEditText.text.toString().toInt()
-                val action =
-                    SignInFragmentDirections.actionSignInFragmentToLotSelectionFragment(studentId)
-                navController.navigate(action)
+                viewModel.getAllSpacesAsLiveData().observe(viewLifecycleOwner) { spaces ->
+                    spaces.forEachIndexed { index, space ->
+                        // if the student is already parked, navigate to the parked fragment
+                        if (space.studentId == studentId) {
+                            val action =
+                                SignInFragmentDirections.actionSignInFragmentToParkedFragment(
+                                    studentId,
+                                    space.lotName, space.spaceId
+                                )
+                            navController.navigate(action)
+                            return@observe
+                        }
+                    }
+                    // if the student is not parked, navigate to the lot selection fragment
+                    val action =
+                        SignInFragmentDirections.actionSignInFragmentToLotSelectionFragment(
+                            studentId
+                        )
+                    navController.navigate(action)
+                }
             }
         }
-
         return binding.root
     }
 

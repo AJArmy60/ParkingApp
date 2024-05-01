@@ -54,6 +54,10 @@ class ParkingViewModel(private val spaceDao: SpaceDao) : ViewModel() {
         return spaceDao.getAllSpacesInLot(lotName).asLiveData()
     }
 
+    fun getAllSpacesAsLiveData(): LiveData<List<Space>> {
+        return spaceDao.getAllSpaces().asLiveData()
+    }
+
     //function that inserts a space into the database
     fun enterSpace(lotName: String, studentId: Int, spaceId: Int) {
         viewModelScope.launch {
