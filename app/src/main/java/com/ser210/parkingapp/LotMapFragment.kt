@@ -15,10 +15,14 @@ import android.widget.TextView
 import androidx.core.view.marginStart
 import androidx.core.view.setPadding
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.ser210.parkingapp.data.Space
 import com.ser210.parkingapp.databinding.FragmentLotMapBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LotMapFragment : Fragment() {
 
@@ -93,11 +97,6 @@ class LotMapFragment : Fragment() {
         )
 
         val spaces = viewModel.getAllSpacesInLot(lotName)
-
-        for (i in 0 until 32){
-            //if (viewModel.getSpaceInLot(i, lotName))
-        }
-
 
         binding.LotnameText.text = lotName
 

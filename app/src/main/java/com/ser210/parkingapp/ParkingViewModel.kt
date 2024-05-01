@@ -115,6 +115,15 @@ class ParkingViewModel(private val spaceDao: SpaceDao) : ViewModel() {
         return spacesInLot
     }
 
+    fun getStudentIdInSpace(spaceId: Int, lotName: String): LiveData<Int> {
+        val studentId = MutableLiveData<Int>()
+        viewModelScope.launch {
+            val space = spaceDao.getSpaceInLot(spaceId, lotName)
+            studentId.value = space?.studentId
+        }
+        return studentId
+    }
+
 
 }
 
