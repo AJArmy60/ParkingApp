@@ -50,13 +50,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
 
-            R.id.settingfragment -> {
+            R.id.settingsButton -> {
                 val rootView = binding.root
                 if (isBackgroundDark) {
                     rootView.setBackgroundColor(android.graphics.Color.WHITE)
